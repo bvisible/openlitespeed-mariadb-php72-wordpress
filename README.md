@@ -1,4 +1,4 @@
-# Docker Wordpress with Centos7 Openlitespeed MariaDB10.2 ProFTPD
+# Docker Wordpress with Centos7 Openlitespeed MariaDB10.2 ProFTPD PHP7.2
 
 This Docker will run
 
@@ -7,6 +7,7 @@ This Docker will run
 - Openlitespedd
 - MariaDB10.2
 - ProFTPD
+- PHP 7.2
 
 you can access litespeed admin in http://yourhostname:7080, set password with command
 
@@ -15,22 +16,4 @@ you can access litespeed admin in http://yourhostname:7080, set password with co
 Document root in:
 ```
 /home/defdomain/html/
-```
-## Build docker image
-```
-git clone https://github.com/tujuhion/docker-centos-openlitespeed-wordpress.git
-cd docker-centos-openlitespeed-wordpress
-docker build --rm=true --no-cache=true -t docker-centos-openlitespeed-wordpress .
-```
-Run docker image
-```
-docker run docker-centos-openlitespeed-wordpress
-```
-## Hub Docker
-
-Can found in https://hub.docker.com/r/7ion/wordpress-openlitespeed/
-
-or pull
-```
-docker pull 7ion/wordpress-openlitespeed/
 ```

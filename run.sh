@@ -36,7 +36,38 @@ sed -i "/#@+/,/#@-/d" wp-config.php
 
 chown -R nobody:nobody /home/defdomain/html/
 
+#Install nano
+yum install -y nano
+
+#Install php-cli
+yum install -y php-cli php-zip wget unzip
+
+#Install composer php
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+#Install php72
+yum install -y epel-release
+yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+yum install -y yum-utils
+yum-config-manager --enable remi-php72
+yum update -y 
+yum install -y php72
+yum install -y php72-php-fpm php72-php-gd php72-php-json php72-php-mbstring php72-php-mysqlnd php72-php-xml php72-php-xmlrpc php72-php-opcache
+yum --enablerepo=remi-php72 install -y php-xml php-soap php-xmlrpc php-mbstring php-json php-gd php-mcrypt
+
+#Install dev tools for openlitespeed
+yum groupinstall -y "Development Tools"
+yum install -y libxml2-devel openssl-devel curl-devel libpng* 
+
+#Install wp-cli
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+chmod +x wp-cli.phar
+mv wp-cli.phar /usr/local/bin/wp
+
 #Delete Install file
 rmdir wordpress
 rm latest.tar.gz
 rm /tmp/wp.keys
+
+
