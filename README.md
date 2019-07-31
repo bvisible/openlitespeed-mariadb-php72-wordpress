@@ -17,3 +17,4 @@ Document root in:
 ```
 /home/defdomain/html/
 ```
+thanks to tujuhion : https://github.com/tujuhion/docker-centos-openlitespeed-wordpress
