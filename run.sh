@@ -69,5 +69,3 @@ mv wp-cli.phar /usr/local/bin/wp
 rmdir wordpress
 rm latest.tar.gz
 rm /tmp/wp.keys
-
-
