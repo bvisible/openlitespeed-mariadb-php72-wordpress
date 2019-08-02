@@ -17,4 +17,23 @@ Document root in:
 ```
 /home/defdomain/html/
 ```
+## Build docker image
+```
+git clone https://github.com/bvisible/openlitespeed-mariadb-php72-wordpress.git
+cd openlitespeed-mariadb-php72-wordpress
+docker build --rm=true --no-cache=true -t openlitespeed-mariadb-php72-wordpress .
+```
+Run docker image
+```
+docker run openlitespeed-mariadb-php72-wordpress
+```
+## Hub Docker
+
+Can found in https://hub.docker.com/r/bvisible/centos-openlitespeed-wp/
+
+or pull
+```
+docker pull bvisible/centos-openlitespeed-wp/
+```
+
 thanks to tujuhion : https://github.com/tujuhion/docker-centos-openlitespeed-wordpress
