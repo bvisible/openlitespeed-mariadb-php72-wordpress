@@ -36,9 +36,6 @@ sed -i "/#@+/,/#@-/d" wp-config.php
 
 chown -R nobody:nobody /home/defdomain/html/
 
-#Copy and save config WordPress
-cp /home/defdomain/html/wp-config.php /home/defdomain/save-config.php
-
 #Install nano
 yum install -y nano
 
@@ -72,3 +69,6 @@ mv wp-cli.phar /usr/local/bin/wp
 rmdir wordpress
 rm latest.tar.gz
 rm /tmp/wp.keys
+
+#Copy and save config WordPress
+cp /home/defdomain/html/wp-config.php /home/defdomain/save-config.php
